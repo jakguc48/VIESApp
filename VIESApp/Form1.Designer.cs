@@ -99,6 +99,7 @@
             // 
             // cbVCountry
             // 
+            this.cbVCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVCountry.FormattingEnabled = true;
             this.cbVCountry.Location = new System.Drawing.Point(10, 49);
             this.cbVCountry.Name = "cbVCountry";
