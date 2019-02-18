@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VIESApp.enums;
 using EnumsNET;
+using VIESApp.ServiceReference1;
 
 namespace VIESApp
 {
@@ -29,10 +30,42 @@ namespace VIESApp
 
         private void btnVCheck_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cbVCountry.SelectedValue.ToString());
-            var alfa = cbVCountry.SelectedItem;
+            //MessageBox.Show(cbVCountry.SelectedValue.ToString());
+            //var alfa = cbVCountry.SelectedItem;
 
-            string asd = CountryEnum.AT.AsString(EnumFormat.Description);
+            //string asd = CountryEnum.AT.AsString(EnumFormat.Description);
+
+           
+            string countryCode = cbVCountry.SelectedValue.ToString();
+            string vatNumber = txtVNumber.Text;
+            bool isValid;
+            string name;
+            string address;
+
+            if (!string.IsNullOrEmpty(vatNumber))
+            {
+                using (ServiceReference1.checkVatPortTypeClient client = new checkVatPortTypeClient())
+                {
+
+                    client.checkVat(ref countryCode, ref vatNumber, out isValid, out name, out address);
+                }
+
+                if (isValid)
+                {
+                    MessageBox.Show("Podany numer Vat jest aktywny", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Podany numer vat jest nieaktywny", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nieprawidłowa wartość numeru vat", "ValidationNum", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+           
+
+
         }
 
         #endregion Events

@@ -38,11 +38,13 @@
             this.labVNumber = new System.Windows.Forms.Label();
             this.cbVCountry = new System.Windows.Forms.ComboBox();
             this.btnVCheck = new System.Windows.Forms.Button();
+            this.txtVNumber = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtVNumber);
             this.groupBox1.Controls.Add(this.btnVCheck);
             this.groupBox1.Controls.Add(this.cbVCountry);
             this.groupBox1.Controls.Add(this.labVNumber);
@@ -116,6 +118,13 @@
             this.btnVCheck.UseVisualStyleBackColor = true;
             this.btnVCheck.Click += new System.EventHandler(this.btnVCheck_Click);
             // 
+            // txtVNumber
+            // 
+            this.txtVNumber.Location = new System.Drawing.Point(10, 124);
+            this.txtVNumber.Name = "txtVNumber";
+            this.txtVNumber.Size = new System.Drawing.Size(145, 21);
+            this.txtVNumber.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +154,7 @@
         private System.Windows.Forms.ComboBox cbVCountry;
         private System.Windows.Forms.Label labVNumber;
         private System.Windows.Forms.Button btnVCheck;
+        private System.Windows.Forms.TextBox txtVNumber;
     }
 }
 
