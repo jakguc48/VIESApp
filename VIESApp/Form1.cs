@@ -20,7 +20,10 @@ namespace VIESApp
         public Form1()
         {
             InitializeComponent();
+            PrepareComponents();
             PrepareCountryCombo(cbVCountry);
+            PrepareCountryCombo(cbVACountry);
+            PrepareCountryCombo(cbVACountryRequester);
 
         }
 
@@ -30,9 +33,11 @@ namespace VIESApp
 
         private async void btnVCheck_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtVNumber.Text))
+            var countryCode = cbVCountry.SelectedValue.ToString();
+            var vatNumber = txtVNumber.Text;
+            if (!string.IsNullOrEmpty(vatNumber))
             {
-                Task<checkVatResponse> vatTask = CheckVatAsync();
+                Task<checkVatResponse> vatTask = CheckVatAsync(countryCode, vatNumber);
                 checkVatResponse vatApprox = await vatTask;
 
 
@@ -107,15 +112,15 @@ namespace VIESApp
         }
 
 
-        private async Task<checkVatResponse> CheckVatAsync()
+        private async Task<checkVatResponse> CheckVatAsync(string country, string vat)
         {
 
             checkVatRequest vatRequest = new checkVatRequest()
             {
                 Body = new checkVatRequestBody()
                 {
-                    countryCode = cbVCountry.SelectedValue.ToString(),
-                    vatNumber = txtVNumber.Text
+                    countryCode = country,
+                    vatNumber = vat
                 }
             };
 
@@ -147,6 +152,15 @@ namespace VIESApp
             cb.DisplayMember = "Description";
             cb.ValueMember = "Value";
             cb.SelectedIndex = (int)CountryEnum.PL;
+        }
+
+        private void PrepareComponents()
+        {
+            txtVANumber.Text = "6342709934";
+            txtVANumberRequester.Text = "6342709934";
+            PrepareCountryCombo(cbVCountry);
+            PrepareCountryCombo(cbVACountry);
+            PrepareCountryCombo(cbVACountryRequester);
         }
 
         #endregion Methods
