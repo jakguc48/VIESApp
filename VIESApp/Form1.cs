@@ -68,7 +68,10 @@ namespace VIESApp
 
             if (vatApprox.Body.valid)
             {
-                
+                txtVAValid.Text = vatApprox.Body.valid.ToString();
+                txtVAName.Text = vatApprox.Body.traderName;
+                txtVAAdress.Text = vatApprox.Body.traderAddress;
+                txtVAId.Text = vatApprox.Body.requestIdentifier;
             }
             else
             {

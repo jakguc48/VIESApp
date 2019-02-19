@@ -300,22 +300,25 @@
             // 
             // txtVAValid
             // 
+            this.txtVAValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVAValid.Location = new System.Drawing.Point(326, 52);
             this.txtVAValid.Name = "txtVAValid";
             this.txtVAValid.ReadOnly = true;
-            this.txtVAValid.Size = new System.Drawing.Size(275, 20);
+            this.txtVAValid.Size = new System.Drawing.Size(275, 21);
             this.txtVAValid.TabIndex = 15;
             // 
             // txtVAName
             // 
+            this.txtVAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVAName.Location = new System.Drawing.Point(326, 124);
             this.txtVAName.Name = "txtVAName";
             this.txtVAName.ReadOnly = true;
-            this.txtVAName.Size = new System.Drawing.Size(275, 20);
+            this.txtVAName.Size = new System.Drawing.Size(275, 21);
             this.txtVAName.TabIndex = 16;
             // 
             // txtVAAdress
             // 
+            this.txtVAAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVAAdress.Location = new System.Drawing.Point(326, 186);
             this.txtVAAdress.Multiline = true;
             this.txtVAAdress.Name = "txtVAAdress";
@@ -325,10 +328,11 @@
             // 
             // txtVAId
             // 
+            this.txtVAId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVAId.Location = new System.Drawing.Point(326, 274);
             this.txtVAId.Name = "txtVAId";
             this.txtVAId.ReadOnly = true;
-            this.txtVAId.Size = new System.Drawing.Size(275, 20);
+            this.txtVAId.Size = new System.Drawing.Size(275, 21);
             this.txtVAId.TabIndex = 18;
             // 
             // Form1
