@@ -31,15 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtVNumber = new System.Windows.Forms.TextBox();
+            this.btnVCheck = new System.Windows.Forms.Button();
+            this.cbVCountry = new System.Windows.Forms.ComboBox();
+            this.labVNumber = new System.Windows.Forms.Label();
+            this.labVCountry = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labTitle = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labVCountry = new System.Windows.Forms.Label();
-            this.labVNumber = new System.Windows.Forms.Label();
-            this.cbVCountry = new System.Windows.Forms.ComboBox();
-            this.btnVCheck = new System.Windows.Forms.Button();
-            this.txtVNumber = new System.Windows.Forms.TextBox();
+            this.labVACountry = new System.Windows.Forms.Label();
+            this.labVANumber = new System.Windows.Forms.Label();
+            this.btnVACheck = new System.Windows.Forms.Button();
+            this.btnVAXml = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -58,8 +63,56 @@
             this.groupBox1.Text = "CheckVat";
             this.toolTip1.SetToolTip(this.groupBox1, "Checkvat\r\n");
             // 
+            // txtVNumber
+            // 
+            this.txtVNumber.Location = new System.Drawing.Point(10, 124);
+            this.txtVNumber.Name = "txtVNumber";
+            this.txtVNumber.Size = new System.Drawing.Size(145, 21);
+            this.txtVNumber.TabIndex = 7;
+            // 
+            // btnVCheck
+            // 
+            this.btnVCheck.Location = new System.Drawing.Point(37, 186);
+            this.btnVCheck.Name = "btnVCheck";
+            this.btnVCheck.Size = new System.Drawing.Size(117, 48);
+            this.btnVCheck.TabIndex = 6;
+            this.btnVCheck.Text = "CheckValid";
+            this.btnVCheck.UseVisualStyleBackColor = true;
+            this.btnVCheck.Click += new System.EventHandler(this.btnVCheck_Click);
+            // 
+            // cbVCountry
+            // 
+            this.cbVCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVCountry.FormattingEnabled = true;
+            this.cbVCountry.Location = new System.Drawing.Point(10, 49);
+            this.cbVCountry.Name = "cbVCountry";
+            this.cbVCountry.Size = new System.Drawing.Size(145, 23);
+            this.cbVCountry.TabIndex = 5;
+            // 
+            // labVNumber
+            // 
+            this.labVNumber.AutoSize = true;
+            this.labVNumber.Location = new System.Drawing.Point(10, 94);
+            this.labVNumber.Name = "labVNumber";
+            this.labVNumber.Size = new System.Drawing.Size(74, 15);
+            this.labVNumber.TabIndex = 4;
+            this.labVNumber.Text = "Numer Vat";
+            // 
+            // labVCountry
+            // 
+            this.labVCountry.AutoSize = true;
+            this.labVCountry.Location = new System.Drawing.Point(6, 26);
+            this.labVCountry.Name = "labVCountry";
+            this.labVCountry.Size = new System.Drawing.Size(150, 15);
+            this.labVCountry.TabIndex = 3;
+            this.labVCountry.Text = "Państwo członkowskie";
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnVAXml);
+            this.groupBox2.Controls.Add(this.btnVACheck);
+            this.groupBox2.Controls.Add(this.labVANumber);
+            this.groupBox2.Controls.Add(this.labVACountry);
             this.groupBox2.Location = new System.Drawing.Point(239, 64);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(607, 384);
@@ -81,49 +134,42 @@
     "h w Unii Europejskiej";
             this.labTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // labVCountry
+            // labVACountry
             // 
-            this.labVCountry.AutoSize = true;
-            this.labVCountry.Location = new System.Drawing.Point(6, 26);
-            this.labVCountry.Name = "labVCountry";
-            this.labVCountry.Size = new System.Drawing.Size(150, 15);
-            this.labVCountry.TabIndex = 3;
-            this.labVCountry.Text = "Państwo członkowskie";
+            this.labVACountry.AutoSize = true;
+            this.labVACountry.Location = new System.Drawing.Point(41, 45);
+            this.labVACountry.Name = "labVACountry";
+            this.labVACountry.Size = new System.Drawing.Size(35, 13);
+            this.labVACountry.TabIndex = 0;
+            this.labVACountry.Text = "label1";
             // 
-            // labVNumber
+            // labVANumber
             // 
-            this.labVNumber.AutoSize = true;
-            this.labVNumber.Location = new System.Drawing.Point(10, 94);
-            this.labVNumber.Name = "labVNumber";
-            this.labVNumber.Size = new System.Drawing.Size(74, 15);
-            this.labVNumber.TabIndex = 4;
-            this.labVNumber.Text = "Numer Vat";
+            this.labVANumber.AutoSize = true;
+            this.labVANumber.Location = new System.Drawing.Point(48, 122);
+            this.labVANumber.Name = "labVANumber";
+            this.labVANumber.Size = new System.Drawing.Size(35, 13);
+            this.labVANumber.TabIndex = 1;
+            this.labVANumber.Text = "label2";
             // 
-            // cbVCountry
+            // btnVACheck
             // 
-            this.cbVCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVCountry.FormattingEnabled = true;
-            this.cbVCountry.Location = new System.Drawing.Point(10, 49);
-            this.cbVCountry.Name = "cbVCountry";
-            this.cbVCountry.Size = new System.Drawing.Size(145, 23);
-            this.cbVCountry.TabIndex = 5;
+            this.btnVACheck.Location = new System.Drawing.Point(80, 288);
+            this.btnVACheck.Name = "btnVACheck";
+            this.btnVACheck.Size = new System.Drawing.Size(75, 23);
+            this.btnVACheck.TabIndex = 2;
+            this.btnVACheck.Text = "Weryfikacja";
+            this.btnVACheck.UseVisualStyleBackColor = true;
+            this.btnVACheck.Click += new System.EventHandler(this.btnVACheck_Click);
             // 
-            // btnVCheck
+            // btnVAXml
             // 
-            this.btnVCheck.Location = new System.Drawing.Point(37, 186);
-            this.btnVCheck.Name = "btnVCheck";
-            this.btnVCheck.Size = new System.Drawing.Size(117, 48);
-            this.btnVCheck.TabIndex = 6;
-            this.btnVCheck.Text = "CheckValid";
-            this.btnVCheck.UseVisualStyleBackColor = true;
-            this.btnVCheck.Click += new System.EventHandler(this.btnVCheck_Click);
-            // 
-            // txtVNumber
-            // 
-            this.txtVNumber.Location = new System.Drawing.Point(10, 124);
-            this.txtVNumber.Name = "txtVNumber";
-            this.txtVNumber.Size = new System.Drawing.Size(145, 21);
-            this.txtVNumber.TabIndex = 7;
+            this.btnVAXml.Location = new System.Drawing.Point(460, 302);
+            this.btnVAXml.Name = "btnVAXml";
+            this.btnVAXml.Size = new System.Drawing.Size(75, 23);
+            this.btnVAXml.TabIndex = 3;
+            this.btnVAXml.Text = "Zapisz";
+            this.btnVAXml.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -139,6 +185,8 @@
             this.Text = "VIES Vat Check";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,6 +203,10 @@
         private System.Windows.Forms.Label labVNumber;
         private System.Windows.Forms.Button btnVCheck;
         private System.Windows.Forms.TextBox txtVNumber;
+        private System.Windows.Forms.Button btnVAXml;
+        private System.Windows.Forms.Button btnVACheck;
+        private System.Windows.Forms.Label labVANumber;
+        private System.Windows.Forms.Label labVACountry;
     }
 }
 
