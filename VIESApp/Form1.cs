@@ -28,51 +28,36 @@ namespace VIESApp
 
         #region Events
 
-        private void btnVCheck_Click(object sender, EventArgs e)
+        private async void btnVCheck_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(cbVCountry.SelectedValue.ToString());
-            //var alfa = cbVCountry.SelectedItem;
-
-            //string asd = CountryEnum.AT.AsString(EnumFormat.Description);
-
-
-            string countryCode = cbVCountry.SelectedValue.ToString();
-            string vatNumber = txtVNumber.Text;
-            bool Valid;
-            string name;
-            string address;
-
-            if (!string.IsNullOrEmpty(vatNumber))
+            if (!string.IsNullOrEmpty(txtVNumber.Text))
             {
-                using (ServiceReference1.checkVatPortTypeClient client = new checkVatPortTypeClient())
-                {
-                    client.checkVat(ref countryCode, ref vatNumber, out Valid, out name, out address);
-                }
+                Task<checkVatResponse> vatTask = CheckVatAsync();
+                checkVatResponse vatApprox = await vatTask;
 
-                if (Valid)
+
+                if (vatApprox.Body.valid)
                 {
-                    MessageBox.Show("Podany numer Vat jest aktywny", "Validation", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    StringBuilder msg = new StringBuilder();
+                    msg.AppendLine("STATUS: AKTYWNY");
+                    msg.AppendLine();
+                    msg.AppendLine($"NAZWA: {vatApprox.Body.name}");
+                    msg.AppendLine();
+                    msg.AppendLine($"ADRES: {vatApprox.Body.address}");
+                    MessageBox.Show(msg.ToString(), "Walidacja numeru Vat", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Podany numer vat jest nieaktywny", "Validation", MessageBoxButtons.OK,
+                    MessageBox.Show("STATUS: NIEAKTYWNY", "Walidacja numeru Vat", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
+
             }
-            else
-            {
-                MessageBox.Show("Nieprawidłowa wartość numeru vat", "ValidationNum", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-            }
-
-
-
         }
 
-        
 
-       
+
+
 
         private async void btnVACheck_Click(object sender, EventArgs e)
         {
@@ -118,7 +103,7 @@ namespace VIESApp
 
                 return approxResponse;
             }
-            
+
         }
 
 
@@ -129,8 +114,8 @@ namespace VIESApp
             {
                 Body = new checkVatRequestBody()
                 {
-                    countryCode = "PL",
-                    vatNumber = "6342709934"
+                    countryCode = cbVCountry.SelectedValue.ToString(),
+                    vatNumber = txtVNumber.Text
                 }
             };
 

@@ -37,12 +37,14 @@
             this.labVNumber = new System.Windows.Forms.Label();
             this.labVCountry = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnVAXml = new System.Windows.Forms.Button();
+            this.btnVACheck = new System.Windows.Forms.Button();
+            this.labVANumber = new System.Windows.Forms.Label();
+            this.labVACountry = new System.Windows.Forms.Label();
             this.labTitle = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labVACountry = new System.Windows.Forms.Label();
-            this.labVANumber = new System.Windows.Forms.Label();
-            this.btnVACheck = new System.Windows.Forms.Button();
-            this.btnVAXml = new System.Windows.Forms.Button();
+            this.labVACountryRequester = new System.Windows.Forms.Label();
+            this.labVANumberRequester = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +111,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labVANumberRequester);
+            this.groupBox2.Controls.Add(this.labVACountryRequester);
             this.groupBox2.Controls.Add(this.btnVAXml);
             this.groupBox2.Controls.Add(this.btnVACheck);
             this.groupBox2.Controls.Add(this.labVANumber);
@@ -119,6 +123,45 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Check Vat Approx";
+            // 
+            // btnVAXml
+            // 
+            this.btnVAXml.Location = new System.Drawing.Point(460, 302);
+            this.btnVAXml.Name = "btnVAXml";
+            this.btnVAXml.Size = new System.Drawing.Size(75, 23);
+            this.btnVAXml.TabIndex = 3;
+            this.btnVAXml.Text = "Zapisz";
+            this.btnVAXml.UseVisualStyleBackColor = true;
+            // 
+            // btnVACheck
+            // 
+            this.btnVACheck.Location = new System.Drawing.Point(38, 311);
+            this.btnVACheck.Name = "btnVACheck";
+            this.btnVACheck.Size = new System.Drawing.Size(75, 23);
+            this.btnVACheck.TabIndex = 2;
+            this.btnVACheck.Text = "Weryfikacja";
+            this.btnVACheck.UseVisualStyleBackColor = true;
+            this.btnVACheck.Click += new System.EventHandler(this.btnVACheck_Click);
+            // 
+            // labVANumber
+            // 
+            this.labVANumber.AutoSize = true;
+            this.labVANumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVANumber.Location = new System.Drawing.Point(6, 94);
+            this.labVANumber.Name = "labVANumber";
+            this.labVANumber.Size = new System.Drawing.Size(74, 15);
+            this.labVANumber.TabIndex = 1;
+            this.labVANumber.Text = "Numer Vat";
+            // 
+            // labVACountry
+            // 
+            this.labVACountry.AutoSize = true;
+            this.labVACountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVACountry.Location = new System.Drawing.Point(6, 28);
+            this.labVACountry.Name = "labVACountry";
+            this.labVACountry.Size = new System.Drawing.Size(150, 15);
+            this.labVACountry.TabIndex = 0;
+            this.labVACountry.Text = "Państwo członkowskie";
             // 
             // labTitle
             // 
@@ -134,42 +177,25 @@
     "h w Unii Europejskiej";
             this.labTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // labVACountry
+            // labVACountryRequester
             // 
-            this.labVACountry.AutoSize = true;
-            this.labVACountry.Location = new System.Drawing.Point(41, 45);
-            this.labVACountry.Name = "labVACountry";
-            this.labVACountry.Size = new System.Drawing.Size(35, 13);
-            this.labVACountry.TabIndex = 0;
-            this.labVACountry.Text = "label1";
+            this.labVACountryRequester.AutoSize = true;
+            this.labVACountryRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVACountryRequester.Location = new System.Drawing.Point(6, 161);
+            this.labVACountryRequester.Name = "labVACountryRequester";
+            this.labVACountryRequester.Size = new System.Drawing.Size(223, 15);
+            this.labVACountryRequester.TabIndex = 4;
+            this.labVACountryRequester.Text = "Państwo członkowskie pytającego";
             // 
-            // labVANumber
+            // labVANumberRequester
             // 
-            this.labVANumber.AutoSize = true;
-            this.labVANumber.Location = new System.Drawing.Point(48, 122);
-            this.labVANumber.Name = "labVANumber";
-            this.labVANumber.Size = new System.Drawing.Size(35, 13);
-            this.labVANumber.TabIndex = 1;
-            this.labVANumber.Text = "label2";
-            // 
-            // btnVACheck
-            // 
-            this.btnVACheck.Location = new System.Drawing.Point(80, 288);
-            this.btnVACheck.Name = "btnVACheck";
-            this.btnVACheck.Size = new System.Drawing.Size(75, 23);
-            this.btnVACheck.TabIndex = 2;
-            this.btnVACheck.Text = "Weryfikacja";
-            this.btnVACheck.UseVisualStyleBackColor = true;
-            this.btnVACheck.Click += new System.EventHandler(this.btnVACheck_Click);
-            // 
-            // btnVAXml
-            // 
-            this.btnVAXml.Location = new System.Drawing.Point(460, 302);
-            this.btnVAXml.Name = "btnVAXml";
-            this.btnVAXml.Size = new System.Drawing.Size(75, 23);
-            this.btnVAXml.TabIndex = 3;
-            this.btnVAXml.Text = "Zapisz";
-            this.btnVAXml.UseVisualStyleBackColor = true;
+            this.labVANumberRequester.AutoSize = true;
+            this.labVANumberRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVANumberRequester.Location = new System.Drawing.Point(6, 229);
+            this.labVANumberRequester.Name = "labVANumberRequester";
+            this.labVANumberRequester.Size = new System.Drawing.Size(147, 15);
+            this.labVANumberRequester.TabIndex = 5;
+            this.labVANumberRequester.Text = "Numer Vat pytającego";
             // 
             // Form1
             // 
@@ -207,6 +233,8 @@
         private System.Windows.Forms.Button btnVACheck;
         private System.Windows.Forms.Label labVANumber;
         private System.Windows.Forms.Label labVACountry;
+        private System.Windows.Forms.Label labVANumberRequester;
+        private System.Windows.Forms.Label labVACountryRequester;
     }
 }
 
