@@ -53,6 +53,10 @@
             this.labVAName = new System.Windows.Forms.Label();
             this.labVAAdress = new System.Windows.Forms.Label();
             this.labVAId = new System.Windows.Forms.Label();
+            this.txtVAValid = new System.Windows.Forms.TextBox();
+            this.txtVAName = new System.Windows.Forms.TextBox();
+            this.txtVAAdress = new System.Windows.Forms.TextBox();
+            this.txtVAId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +123,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtVAId);
+            this.groupBox2.Controls.Add(this.txtVAAdress);
+            this.groupBox2.Controls.Add(this.txtVAName);
+            this.groupBox2.Controls.Add(this.txtVAValid);
             this.groupBox2.Controls.Add(this.labVAId);
             this.groupBox2.Controls.Add(this.labVAAdress);
             this.groupBox2.Controls.Add(this.labVAName);
@@ -290,6 +298,39 @@
             this.labVAId.TabIndex = 14;
             this.labVAId.Text = "Identyfikator";
             // 
+            // txtVAValid
+            // 
+            this.txtVAValid.Location = new System.Drawing.Point(326, 52);
+            this.txtVAValid.Name = "txtVAValid";
+            this.txtVAValid.ReadOnly = true;
+            this.txtVAValid.Size = new System.Drawing.Size(275, 20);
+            this.txtVAValid.TabIndex = 15;
+            // 
+            // txtVAName
+            // 
+            this.txtVAName.Location = new System.Drawing.Point(326, 124);
+            this.txtVAName.Name = "txtVAName";
+            this.txtVAName.ReadOnly = true;
+            this.txtVAName.Size = new System.Drawing.Size(275, 20);
+            this.txtVAName.TabIndex = 16;
+            // 
+            // txtVAAdress
+            // 
+            this.txtVAAdress.Location = new System.Drawing.Point(326, 186);
+            this.txtVAAdress.Multiline = true;
+            this.txtVAAdress.Name = "txtVAAdress";
+            this.txtVAAdress.ReadOnly = true;
+            this.txtVAAdress.Size = new System.Drawing.Size(275, 37);
+            this.txtVAAdress.TabIndex = 17;
+            // 
+            // txtVAId
+            // 
+            this.txtVAId.Location = new System.Drawing.Point(326, 274);
+            this.txtVAId.Name = "txtVAId";
+            this.txtVAId.ReadOnly = true;
+            this.txtVAId.Size = new System.Drawing.Size(275, 20);
+            this.txtVAId.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,6 +377,10 @@
         private System.Windows.Forms.Label labVAAdress;
         private System.Windows.Forms.Label labVAName;
         private System.Windows.Forms.Label labVAValid;
+        private System.Windows.Forms.TextBox txtVAId;
+        private System.Windows.Forms.TextBox txtVAAdress;
+        private System.Windows.Forms.TextBox txtVAName;
+        private System.Windows.Forms.TextBox txtVAValid;
     }
 }
 

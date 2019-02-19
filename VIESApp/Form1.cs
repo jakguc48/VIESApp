@@ -21,10 +21,6 @@ namespace VIESApp
         {
             InitializeComponent();
             PrepareComponents();
-            PrepareCountryCombo(cbVCountry);
-            PrepareCountryCombo(cbVACountry);
-            PrepareCountryCombo(cbVACountryRequester);
-
         }
 
         #endregion Ctor
@@ -38,17 +34,17 @@ namespace VIESApp
             if (!string.IsNullOrEmpty(vatNumber))
             {
                 Task<checkVatResponse> vatTask = CheckVatAsync(countryCode, vatNumber);
-                checkVatResponse vatApprox = await vatTask;
+                checkVatResponse vat = await vatTask;
 
 
-                if (vatApprox.Body.valid)
+                if (vat.Body.valid)
                 {
                     StringBuilder msg = new StringBuilder();
                     msg.AppendLine("STATUS: AKTYWNY");
                     msg.AppendLine();
-                    msg.AppendLine($"NAZWA: {vatApprox.Body.name}");
+                    msg.AppendLine($"NAZWA: {vat.Body.name}");
                     msg.AppendLine();
-                    msg.AppendLine($"ADRES: {vatApprox.Body.address}");
+                    msg.AppendLine($"ADRES: {vat.Body.address}");
                     MessageBox.Show(msg.ToString(), "Walidacja numeru Vat", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
@@ -59,17 +55,26 @@ namespace VIESApp
 
             }
         }
-
-
-
-
-
+        
         private async void btnVACheck_Click(object sender, EventArgs e)
         {
-            Task<checkVatApproxResponse> vatApproxTask = CheckVatApproxAsync();
+            var countryCode = cbVACountry.SelectedValue.ToString();
+            var vatNumber = txtVANumber.Text;
+            var countryCodeRequester = cbVACountryRequester.SelectedValue.ToString();
+            var vatNumberRequester = txtVANumberRequester.Text;
+
+            Task<checkVatApproxResponse> vatApproxTask = CheckVatApproxAsync(countryCode, vatNumber, countryCodeRequester, vatNumberRequester);
             checkVatApproxResponse vatApprox = await vatApproxTask;
 
-            string vatNumber = txtVNumber.Text;
+            if (vatApprox.Body.valid)
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("STATUS: NIEAKTYWNY", "Walidacja numeru Vat", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
 
         }
 
@@ -79,17 +84,17 @@ namespace VIESApp
 
         #region Methods
 
-        private async Task<checkVatApproxResponse> CheckVatApproxAsync()
+        private async Task<checkVatApproxResponse> CheckVatApproxAsync(string country, string vat, string countryReq, string vatReq)
         {
 
             checkVatApproxRequest approxRequest = new checkVatApproxRequest()
             {
                 Body = new checkVatApproxRequestBody()
                 {
-                    countryCode = "PL",
-                    requesterCountryCode = "PL",
-                    requesterVatNumber = "6342704",
-                    vatNumber = "6342709934",
+                    countryCode = country,
+                    vatNumber = vat,
+                    requesterCountryCode = countryReq,
+                    requesterVatNumber = vatReq,
                     traderCity = "",
                     traderCompanyType = "",
                     traderName = "",
