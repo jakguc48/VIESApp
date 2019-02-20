@@ -1,21 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using VIESApp.enums;
-using EnumsNET;
+using VIESApp.service;
 using VIESApp.ServiceReference1;
 
 namespace VIESApp
 {
     public partial class Form1 : Form
     {
+        #region Properties
+
+        public IVatService _vatService = new VatService();
+
+        #endregion
+
         #region Ctor
 
         public Form1()
@@ -30,16 +32,11 @@ namespace VIESApp
 
         private async void btnVCheck_Click(object sender, EventArgs e)
         {
-            var countryCode = cbVCountry.SelectedValue.ToString();
-            var vatNumber = txtVNumber.Text;
-            if (!string.IsNullOrEmpty(vatNumber))
+            if (!string.IsNullOrEmpty(txtVNumber.Text))
             {
-                
-                Task<checkVatResponse> vatTask = CheckVatAsync(countryCode, vatNumber);
-                string la = "adsa";
+                Task<checkVatResponse> vatTask = _vatService.CheckVatAsync(cbVCountry.SelectedValue.ToString(), txtVNumber.Text);
+
                 checkVatResponse vat = await vatTask;
-
-
                 if (vat.Body.valid)
                 {
                     StringBuilder msg = new StringBuilder();
@@ -61,95 +58,38 @@ namespace VIESApp
         
         private async void btnVACheck_Click(object sender, EventArgs e)
         {
-            var countryCode = cbVACountry.SelectedValue.ToString();
-            var vatNumber = txtVANumber.Text;
-            var countryCodeRequester = cbVACountryRequester.SelectedValue.ToString();
-            var vatNumberRequester = txtVANumberRequester.Text;
-            
-
-            Task<checkVatApproxResponse> vatApproxTask = CheckVatApproxAsync(countryCode, vatNumber, countryCodeRequester, vatNumberRequester);
-            
-            checkVatApproxResponse vatApprox = await vatApproxTask;
-
-            if (vatApprox.Body.valid)
+            if (!string.IsNullOrEmpty(txtVANumber.Text) && !string.IsNullOrEmpty(txtVANumberRequester.Text))
             {
-                txtVAValid.Text = vatApprox.Body.valid.ToString();
-                txtVAName.Text = vatApprox.Body.traderName;
-                txtVAAdress.Text = vatApprox.Body.traderAddress;
-                txtVAId.Text = vatApprox.Body.requestIdentifier;
-                txtVAVat.Text = vatApprox.Body.vatNumber;
-                btnVAXml.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("STATUS: NIEAKTYWNY", "Walidacja numeru Vat", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+                Task<checkVatApproxResponse> vatApproxTask = _vatService.CheckVatApproxAsync(
+                    cbVACountry.SelectedValue.ToString(), txtVANumber.Text,
+                    cbVACountryRequester.SelectedValue.ToString(), txtVANumberRequester.Text);
 
+                checkVatApproxResponse vatApprox = await vatApproxTask;
+                if (vatApprox.Body.valid)
+                {
+                    txtVAValid.Text = vatApprox.Body.valid.ToString();
+                    txtVAName.Text = vatApprox.Body.traderName;
+                    txtVAAdress.Text = vatApprox.Body.traderAddress;
+                    txtVAId.Text = vatApprox.Body.requestIdentifier;
+                    txtVAVat.Text = vatApprox.Body.vatNumber;
+                    btnVAXml.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("STATUS: NIEAKTYWNY", "Walidacja numeru Vat", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
         }
 
+        private void btnVAXml_Click(object sender, EventArgs e)
+        {
+            _vatService.CreateXML(txtVAVat.Text, txtVAValid.Text, txtVAName.Text, txtVAAdress.Text, txtVAId.Text);
+        }
 
         #endregion Events
 
-
         #region Methods
-
-        private async Task<checkVatApproxResponse> CheckVatApproxAsync(string country, string vat, string countryReq, string vatReq)
-        {
-
-            checkVatApproxRequest approxRequest = new checkVatApproxRequest()
-            {
-                Body = new checkVatApproxRequestBody()
-                {
-                    countryCode = country,
-                    vatNumber = vat,
-                    requesterCountryCode = countryReq,
-                    requesterVatNumber = vatReq,
-                    traderCity = "",
-                    traderCompanyType = "",
-                    traderName = "",
-                    traderPostcode = "",
-                    traderStreet = ""
-                }
-            };
-
-            checkVatApproxResponse approxResponse = new checkVatApproxResponse();
-
-            using (ServiceReference1.checkVatPortTypeClient client = new checkVatPortTypeClient())
-            {
-                approxResponse = await client.checkVatApproxAsync(approxRequest.Body.countryCode,
-                    approxRequest.Body.requesterVatNumber, approxRequest.Body.traderName, approxRequest.Body.traderCompanyType, approxRequest.Body.traderStreet,
-                    approxRequest.Body.traderPostcode, approxRequest.Body.traderCity, approxRequest.Body.requesterCountryCode, approxRequest.Body.requesterVatNumber);
-
-                return approxResponse;
-            }
-
-        }
-
-
-        private async Task<checkVatResponse> CheckVatAsync(string country, string vat)
-        {
-
-            checkVatRequest vatRequest = new checkVatRequest()
-            {
-                Body = new checkVatRequestBody()
-                {
-                    countryCode = country,
-                    vatNumber = vat
-                }
-            };
-
-            checkVatResponse vatResponse = new checkVatResponse();
-            using (ServiceReference1.checkVatPortTypeClient client = new checkVatPortTypeClient())
-            {
-                vatResponse = await client.checkVatAsync(vatRequest.Body.countryCode, vatRequest.Body.vatNumber);
-
-                return vatResponse;
-            }
-            
-
-        }
-
 
         private void PrepareCountryCombo(ComboBox cb)
         {
@@ -181,24 +121,6 @@ namespace VIESApp
 
         #endregion Methods
 
-        private void btnVAXml_Click(object sender, EventArgs e)
-        {
-            XDocument doc = new XDocument(new XElement("ViesVatValidation",
-                new XElement("Vat", txtVAVat.Text),
-                    new XElement("Valid", txtVAValid.Text),
-                    new XElement("Name", txtVAName.Text),
-                    new XElement("Adress", txtVAAdress.Text),
-                    new XElement("RequestId", txtVAId.Text)));
-            using (SaveFileDialog dialog = new SaveFileDialog())
-            {
-                dialog.Filter = "xml files (*.xml)|*.xml";
-                dialog.FilterIndex = 2;
-                dialog.RestoreDirectory = true;
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    doc.Save(dialog.FileName);
-                }
-            }   
-        }
+        
     }
 }
