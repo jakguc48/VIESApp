@@ -83,9 +83,10 @@
             // 
             // txtVNumber
             // 
+            this.txtVNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVNumber.Location = new System.Drawing.Point(10, 124);
             this.txtVNumber.Name = "txtVNumber";
-            this.txtVNumber.Size = new System.Drawing.Size(145, 24);
+            this.txtVNumber.Size = new System.Drawing.Size(145, 23);
             this.txtVNumber.TabIndex = 7;
             // 
             // btnVCheck
@@ -105,10 +106,11 @@
             // cbVCountry
             // 
             this.cbVCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbVCountry.FormattingEnabled = true;
             this.cbVCountry.Location = new System.Drawing.Point(10, 49);
             this.cbVCountry.Name = "cbVCountry";
-            this.cbVCountry.Size = new System.Drawing.Size(145, 26);
+            this.cbVCountry.Size = new System.Drawing.Size(145, 24);
             this.cbVCountry.TabIndex = 5;
             // 
             // labVNumber
@@ -154,16 +156,16 @@
             // 
             // txtVAId
             // 
-            this.txtVAId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVAId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVAId.Location = new System.Drawing.Point(15, 247);
             this.txtVAId.Name = "txtVAId";
             this.txtVAId.ReadOnly = true;
-            this.txtVAId.Size = new System.Drawing.Size(275, 21);
+            this.txtVAId.Size = new System.Drawing.Size(275, 23);
             this.txtVAId.TabIndex = 18;
             // 
             // txtVAAdress
             // 
-            this.txtVAAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVAAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVAAdress.Location = new System.Drawing.Point(15, 159);
             this.txtVAAdress.Multiline = true;
             this.txtVAAdress.Name = "txtVAAdress";
@@ -173,20 +175,20 @@
             // 
             // txtVAName
             // 
-            this.txtVAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVAName.Location = new System.Drawing.Point(15, 97);
             this.txtVAName.Name = "txtVAName";
             this.txtVAName.ReadOnly = true;
-            this.txtVAName.Size = new System.Drawing.Size(275, 21);
+            this.txtVAName.Size = new System.Drawing.Size(275, 23);
             this.txtVAName.TabIndex = 16;
             // 
             // txtVAValid
             // 
-            this.txtVAValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVAValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVAValid.Location = new System.Drawing.Point(15, 25);
             this.txtVAValid.Name = "txtVAValid";
             this.txtVAValid.ReadOnly = true;
-            this.txtVAValid.Size = new System.Drawing.Size(275, 21);
+            this.txtVAValid.Size = new System.Drawing.Size(275, 23);
             this.txtVAValid.TabIndex = 15;
             // 
             // labVAId
@@ -231,39 +233,39 @@
             // 
             // txtVANumberRequester
             // 
-            this.txtVANumberRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVANumberRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVANumberRequester.Location = new System.Drawing.Point(25, 276);
             this.txtVANumberRequester.Name = "txtVANumberRequester";
-            this.txtVANumberRequester.Size = new System.Drawing.Size(145, 21);
+            this.txtVANumberRequester.Size = new System.Drawing.Size(145, 23);
             this.txtVANumberRequester.TabIndex = 10;
             // 
             // cbVACountryRequester
             // 
             this.cbVACountryRequester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVACountryRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbVACountryRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbVACountryRequester.FormattingEnabled = true;
             this.cbVACountryRequester.Location = new System.Drawing.Point(25, 202);
             this.cbVACountryRequester.Name = "cbVACountryRequester";
-            this.cbVACountryRequester.Size = new System.Drawing.Size(145, 23);
+            this.cbVACountryRequester.Size = new System.Drawing.Size(145, 24);
             this.cbVACountryRequester.TabIndex = 9;
             // 
             // txtVANumber
             // 
             this.txtVANumber.BackColor = System.Drawing.SystemColors.Window;
-            this.txtVANumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVANumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtVANumber.Location = new System.Drawing.Point(24, 126);
             this.txtVANumber.Name = "txtVANumber";
-            this.txtVANumber.Size = new System.Drawing.Size(145, 21);
+            this.txtVANumber.Size = new System.Drawing.Size(145, 23);
             this.txtVANumber.TabIndex = 8;
             // 
             // cbVACountry
             // 
             this.cbVACountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVACountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbVACountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbVACountry.FormattingEnabled = true;
             this.cbVACountry.Location = new System.Drawing.Point(24, 51);
             this.cbVACountry.Name = "cbVACountry";
-            this.cbVACountry.Size = new System.Drawing.Size(145, 23);
+            this.cbVACountry.Size = new System.Drawing.Size(145, 24);
             this.cbVACountry.TabIndex = 6;
             // 
             // labVANumberRequester
