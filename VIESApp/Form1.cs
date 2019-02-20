@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,23 +37,37 @@ namespace VIESApp
             {
                 Task<checkVatResponse> vatTask = _vatService.CheckVatAsync(cbVCountry.SelectedValue.ToString(), txtVNumber.Text);
 
-                checkVatResponse vat = await vatTask;
-                if (vat.Body.valid)
+                checkVatResponse vat= new checkVatResponse();
+                try
                 {
-                    StringBuilder msg = new StringBuilder();
-                    msg.AppendLine("STATUS: AKTYWNY");
-                    msg.AppendLine();
-                    msg.AppendLine($"NAZWA: {vat.Body.name}");
-                    msg.AppendLine();
-                    msg.AppendLine($"ADRES: {vat.Body.address}");
-                    MessageBox.Show(msg.ToString(), "Walidacja numeru Vat", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    vat = await vatTask;
+                    if (vat.Body.valid)
+                    {
+                        StringBuilder msg = new StringBuilder();
+                        msg.AppendLine("STATUS: AKTYWNY");
+                        msg.AppendLine();
+                        msg.AppendLine($"NAZWA: {vat.Body.name}");
+                        msg.AppendLine();
+                        msg.AppendLine($"ADRES: {vat.Body.address}");
+                        MessageBox.Show(msg.ToString(), "Walidacja numeru Vat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("STATUS: NIEAKTYWNY", "Walidacja numeru Vat", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (ProtocolException exception)
                 {
-                    MessageBox.Show("STATUS: NIEAKTYWNY", "Walidacja numeru Vat", MessageBoxButtons.OK,
+
+                    MessageBox.Show("Wystąpił błąd serwera VIES", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-
+            }
+            else
+            {
+                MessageBox.Show("Wartość pola Vat nie może być pusta", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
             }
         }
         
@@ -64,21 +79,36 @@ namespace VIESApp
                     cbVACountry.SelectedValue.ToString(), txtVANumber.Text,
                     cbVACountryRequester.SelectedValue.ToString(), txtVANumberRequester.Text);
 
-                checkVatApproxResponse vatApprox = await vatApproxTask;
-                if (vatApprox.Body.valid)
+                checkVatApproxResponse vatApprox = new checkVatApproxResponse();
+                try
                 {
-                    txtVAValid.Text = vatApprox.Body.valid.ToString();
-                    txtVAName.Text = vatApprox.Body.traderName;
-                    txtVAAdress.Text = vatApprox.Body.traderAddress;
-                    txtVAId.Text = vatApprox.Body.requestIdentifier;
-                    txtVAVat.Text = vatApprox.Body.vatNumber;
-                    btnVAXml.Enabled = true;
+                    vatApprox = await vatApproxTask;
+                    if (vatApprox.Body.valid)
+                    {
+                        txtVAValid.Text = vatApprox.Body.valid.ToString();
+                        txtVAName.Text = vatApprox.Body.traderName;
+                        txtVAAdress.Text = vatApprox.Body.traderAddress;
+                        txtVAId.Text = vatApprox.Body.requestIdentifier;
+                        txtVAVat.Text = vatApprox.Body.vatNumber;
+                        btnVAXml.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("STATUS: NIEAKTYWNY", "Walidacja numeru Vat", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (ProtocolException exception)
                 {
-                    MessageBox.Show("STATUS: NIEAKTYWNY", "Walidacja numeru Vat", MessageBoxButtons.OK,
+                    MessageBox.Show("Wystąpił błąd serwera VIES", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
+               
+            }
+            else
+            {
+                MessageBox.Show("Wartość pól Vat nie może być pusta", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
             }
         }
 
