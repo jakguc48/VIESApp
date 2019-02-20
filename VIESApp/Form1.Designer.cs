@@ -37,61 +37,69 @@
             this.labVNumber = new System.Windows.Forms.Label();
             this.labVCountry = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtVAId = new System.Windows.Forms.TextBox();
+            this.txtVAAdress = new System.Windows.Forms.TextBox();
+            this.txtVAName = new System.Windows.Forms.TextBox();
+            this.txtVAValid = new System.Windows.Forms.TextBox();
+            this.labVAId = new System.Windows.Forms.Label();
+            this.labVAAdress = new System.Windows.Forms.Label();
+            this.labVAName = new System.Windows.Forms.Label();
+            this.labVAValid = new System.Windows.Forms.Label();
+            this.txtVANumberRequester = new System.Windows.Forms.TextBox();
+            this.cbVACountryRequester = new System.Windows.Forms.ComboBox();
+            this.txtVANumber = new System.Windows.Forms.TextBox();
+            this.cbVACountry = new System.Windows.Forms.ComboBox();
+            this.labVANumberRequester = new System.Windows.Forms.Label();
+            this.labVACountryRequester = new System.Windows.Forms.Label();
             this.btnVAXml = new System.Windows.Forms.Button();
             this.btnVACheck = new System.Windows.Forms.Button();
             this.labVANumber = new System.Windows.Forms.Label();
             this.labVACountry = new System.Windows.Forms.Label();
             this.labTitle = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labVACountryRequester = new System.Windows.Forms.Label();
-            this.labVANumberRequester = new System.Windows.Forms.Label();
-            this.cbVACountry = new System.Windows.Forms.ComboBox();
-            this.txtVANumber = new System.Windows.Forms.TextBox();
-            this.cbVACountryRequester = new System.Windows.Forms.ComboBox();
-            this.txtVANumberRequester = new System.Windows.Forms.TextBox();
-            this.labVAValid = new System.Windows.Forms.Label();
-            this.labVAName = new System.Windows.Forms.Label();
-            this.labVAAdress = new System.Windows.Forms.Label();
-            this.labVAId = new System.Windows.Forms.Label();
-            this.txtVAValid = new System.Windows.Forms.TextBox();
-            this.txtVAName = new System.Windows.Forms.TextBox();
-            this.txtVAAdress = new System.Windows.Forms.TextBox();
-            this.txtVAId = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtVAVat = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox1.Controls.Add(this.txtVNumber);
             this.groupBox1.Controls.Add(this.btnVCheck);
             this.groupBox1.Controls.Add(this.cbVCountry);
             this.groupBox1.Controls.Add(this.labVNumber);
             this.groupBox1.Controls.Add(this.labVCountry);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(7, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(202, 382);
+            this.groupBox1.Size = new System.Drawing.Size(186, 234);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "CheckVat";
+            this.groupBox1.Text = "Szybka Walidacja Vat";
             this.toolTip1.SetToolTip(this.groupBox1, "Checkvat\r\n");
             // 
             // txtVNumber
             // 
             this.txtVNumber.Location = new System.Drawing.Point(10, 124);
             this.txtVNumber.Name = "txtVNumber";
-            this.txtVNumber.Size = new System.Drawing.Size(145, 21);
+            this.txtVNumber.Size = new System.Drawing.Size(145, 24);
             this.txtVNumber.TabIndex = 7;
             // 
             // btnVCheck
             // 
-            this.btnVCheck.Location = new System.Drawing.Point(37, 186);
+            this.btnVCheck.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnVCheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVCheck.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnVCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnVCheck.Location = new System.Drawing.Point(45, 164);
             this.btnVCheck.Name = "btnVCheck";
-            this.btnVCheck.Size = new System.Drawing.Size(117, 48);
+            this.btnVCheck.Size = new System.Drawing.Size(110, 40);
             this.btnVCheck.TabIndex = 6;
-            this.btnVCheck.Text = "CheckValid";
-            this.btnVCheck.UseVisualStyleBackColor = true;
+            this.btnVCheck.Text = "WERYFIKUJ";
+            this.btnVCheck.UseVisualStyleBackColor = false;
             this.btnVCheck.Click += new System.EventHandler(this.btnVCheck_Click);
             // 
             // cbVCountry
@@ -100,12 +108,13 @@
             this.cbVCountry.FormattingEnabled = true;
             this.cbVCountry.Location = new System.Drawing.Point(10, 49);
             this.cbVCountry.Name = "cbVCountry";
-            this.cbVCountry.Size = new System.Drawing.Size(145, 23);
+            this.cbVCountry.Size = new System.Drawing.Size(145, 26);
             this.cbVCountry.TabIndex = 5;
             // 
             // labVNumber
             // 
             this.labVNumber.AutoSize = true;
+            this.labVNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labVNumber.Location = new System.Drawing.Point(10, 94);
             this.labVNumber.Name = "labVNumber";
             this.labVNumber.Size = new System.Drawing.Size(74, 15);
@@ -115,6 +124,7 @@
             // labVCountry
             // 
             this.labVCountry.AutoSize = true;
+            this.labVCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labVCountry.Location = new System.Drawing.Point(6, 26);
             this.labVCountry.Name = "labVCountry";
             this.labVCountry.Size = new System.Drawing.Size(150, 15);
@@ -123,55 +133,194 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtVAId);
-            this.groupBox2.Controls.Add(this.txtVAAdress);
-            this.groupBox2.Controls.Add(this.txtVAName);
-            this.groupBox2.Controls.Add(this.txtVAValid);
-            this.groupBox2.Controls.Add(this.labVAId);
-            this.groupBox2.Controls.Add(this.labVAAdress);
-            this.groupBox2.Controls.Add(this.labVAName);
-            this.groupBox2.Controls.Add(this.labVAValid);
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.txtVANumberRequester);
             this.groupBox2.Controls.Add(this.cbVACountryRequester);
             this.groupBox2.Controls.Add(this.txtVANumber);
             this.groupBox2.Controls.Add(this.cbVACountry);
             this.groupBox2.Controls.Add(this.labVANumberRequester);
             this.groupBox2.Controls.Add(this.labVACountryRequester);
-            this.groupBox2.Controls.Add(this.btnVAXml);
             this.groupBox2.Controls.Add(this.btnVACheck);
             this.groupBox2.Controls.Add(this.labVANumber);
             this.groupBox2.Controls.Add(this.labVACountry);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox2.Location = new System.Drawing.Point(239, 64);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(607, 384);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Check Vat Approx";
+            this.groupBox2.Text = "Złożona Walidacja Vat";
+            // 
+            // txtVAId
+            // 
+            this.txtVAId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVAId.Location = new System.Drawing.Point(15, 247);
+            this.txtVAId.Name = "txtVAId";
+            this.txtVAId.ReadOnly = true;
+            this.txtVAId.Size = new System.Drawing.Size(275, 21);
+            this.txtVAId.TabIndex = 18;
+            // 
+            // txtVAAdress
+            // 
+            this.txtVAAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVAAdress.Location = new System.Drawing.Point(15, 159);
+            this.txtVAAdress.Multiline = true;
+            this.txtVAAdress.Name = "txtVAAdress";
+            this.txtVAAdress.ReadOnly = true;
+            this.txtVAAdress.Size = new System.Drawing.Size(275, 37);
+            this.txtVAAdress.TabIndex = 17;
+            // 
+            // txtVAName
+            // 
+            this.txtVAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVAName.Location = new System.Drawing.Point(15, 97);
+            this.txtVAName.Name = "txtVAName";
+            this.txtVAName.ReadOnly = true;
+            this.txtVAName.Size = new System.Drawing.Size(275, 21);
+            this.txtVAName.TabIndex = 16;
+            // 
+            // txtVAValid
+            // 
+            this.txtVAValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVAValid.Location = new System.Drawing.Point(15, 25);
+            this.txtVAValid.Name = "txtVAValid";
+            this.txtVAValid.ReadOnly = true;
+            this.txtVAValid.Size = new System.Drawing.Size(275, 21);
+            this.txtVAValid.TabIndex = 15;
+            // 
+            // labVAId
+            // 
+            this.labVAId.AutoSize = true;
+            this.labVAId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVAId.Location = new System.Drawing.Point(12, 216);
+            this.labVAId.Name = "labVAId";
+            this.labVAId.Size = new System.Drawing.Size(150, 15);
+            this.labVAId.TabIndex = 14;
+            this.labVAId.Text = "Identyfikator zapytania";
+            // 
+            // labVAAdress
+            // 
+            this.labVAAdress.AutoSize = true;
+            this.labVAAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVAAdress.Location = new System.Drawing.Point(12, 134);
+            this.labVAAdress.Name = "labVAAdress";
+            this.labVAAdress.Size = new System.Drawing.Size(85, 15);
+            this.labVAAdress.TabIndex = 13;
+            this.labVAAdress.Text = "Adres spółki";
+            // 
+            // labVAName
+            // 
+            this.labVAName.AutoSize = true;
+            this.labVAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVAName.Location = new System.Drawing.Point(12, 67);
+            this.labVAName.Name = "labVAName";
+            this.labVAName.Size = new System.Drawing.Size(92, 15);
+            this.labVAName.TabIndex = 12;
+            this.labVAName.Text = "Nazwa spółki";
+            // 
+            // labVAValid
+            // 
+            this.labVAValid.AutoSize = true;
+            this.labVAValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVAValid.Location = new System.Drawing.Point(12, 1);
+            this.labVAValid.Name = "labVAValid";
+            this.labVAValid.Size = new System.Drawing.Size(109, 15);
+            this.labVAValid.TabIndex = 11;
+            this.labVAValid.Text = "Poprawność Vat";
+            // 
+            // txtVANumberRequester
+            // 
+            this.txtVANumberRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVANumberRequester.Location = new System.Drawing.Point(25, 276);
+            this.txtVANumberRequester.Name = "txtVANumberRequester";
+            this.txtVANumberRequester.Size = new System.Drawing.Size(145, 21);
+            this.txtVANumberRequester.TabIndex = 10;
+            // 
+            // cbVACountryRequester
+            // 
+            this.cbVACountryRequester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVACountryRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbVACountryRequester.FormattingEnabled = true;
+            this.cbVACountryRequester.Location = new System.Drawing.Point(25, 202);
+            this.cbVACountryRequester.Name = "cbVACountryRequester";
+            this.cbVACountryRequester.Size = new System.Drawing.Size(145, 23);
+            this.cbVACountryRequester.TabIndex = 9;
+            // 
+            // txtVANumber
+            // 
+            this.txtVANumber.BackColor = System.Drawing.SystemColors.Window;
+            this.txtVANumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtVANumber.Location = new System.Drawing.Point(24, 126);
+            this.txtVANumber.Name = "txtVANumber";
+            this.txtVANumber.Size = new System.Drawing.Size(145, 21);
+            this.txtVANumber.TabIndex = 8;
+            // 
+            // cbVACountry
+            // 
+            this.cbVACountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVACountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbVACountry.FormattingEnabled = true;
+            this.cbVACountry.Location = new System.Drawing.Point(24, 51);
+            this.cbVACountry.Name = "cbVACountry";
+            this.cbVACountry.Size = new System.Drawing.Size(145, 23);
+            this.cbVACountry.TabIndex = 6;
+            // 
+            // labVANumberRequester
+            // 
+            this.labVANumberRequester.AutoSize = true;
+            this.labVANumberRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVANumberRequester.Location = new System.Drawing.Point(22, 245);
+            this.labVANumberRequester.Name = "labVANumberRequester";
+            this.labVANumberRequester.Size = new System.Drawing.Size(147, 15);
+            this.labVANumberRequester.TabIndex = 5;
+            this.labVANumberRequester.Text = "Numer Vat pytającego";
+            // 
+            // labVACountryRequester
+            // 
+            this.labVACountryRequester.AutoSize = true;
+            this.labVACountryRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labVACountryRequester.Location = new System.Drawing.Point(22, 163);
+            this.labVACountryRequester.MaximumSize = new System.Drawing.Size(150, 0);
+            this.labVACountryRequester.Name = "labVACountryRequester";
+            this.labVACountryRequester.Size = new System.Drawing.Size(150, 30);
+            this.labVACountryRequester.TabIndex = 4;
+            this.labVACountryRequester.Text = "Państwo członkowskie pytającego";
             // 
             // btnVAXml
             // 
-            this.btnVAXml.Location = new System.Drawing.Point(460, 302);
+            this.btnVAXml.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnVAXml.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVAXml.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnVAXml.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnVAXml.Location = new System.Drawing.Point(190, 298);
             this.btnVAXml.Name = "btnVAXml";
-            this.btnVAXml.Size = new System.Drawing.Size(75, 23);
+            this.btnVAXml.Size = new System.Drawing.Size(100, 40);
             this.btnVAXml.TabIndex = 3;
-            this.btnVAXml.Text = "Zapisz";
-            this.btnVAXml.UseVisualStyleBackColor = true;
+            this.btnVAXml.Text = "ZAPISZ";
+            this.btnVAXml.UseVisualStyleBackColor = false;
+            this.btnVAXml.Click += new System.EventHandler(this.btnVAXml_Click);
             // 
             // btnVACheck
             // 
-            this.btnVACheck.Location = new System.Drawing.Point(38, 311);
+            this.btnVACheck.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnVACheck.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnVACheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVACheck.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnVACheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnVACheck.Location = new System.Drawing.Point(62, 313);
             this.btnVACheck.Name = "btnVACheck";
-            this.btnVACheck.Size = new System.Drawing.Size(75, 23);
+            this.btnVACheck.Size = new System.Drawing.Size(110, 40);
             this.btnVACheck.TabIndex = 2;
-            this.btnVACheck.Text = "Weryfikacja";
-            this.btnVACheck.UseVisualStyleBackColor = true;
+            this.btnVACheck.Text = "WERYFIKUJ";
+            this.btnVACheck.UseVisualStyleBackColor = false;
             this.btnVACheck.Click += new System.EventHandler(this.btnVACheck_Click);
             // 
             // labVANumber
             // 
             this.labVANumber.AutoSize = true;
             this.labVANumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVANumber.Location = new System.Drawing.Point(6, 94);
+            this.labVANumber.Location = new System.Drawing.Point(22, 96);
             this.labVANumber.Name = "labVANumber";
             this.labVANumber.Size = new System.Drawing.Size(74, 15);
             this.labVANumber.TabIndex = 1;
@@ -181,7 +330,7 @@
             // 
             this.labVACountry.AutoSize = true;
             this.labVACountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVACountry.Location = new System.Drawing.Point(6, 28);
+            this.labVACountry.Location = new System.Drawing.Point(22, 30);
             this.labVACountry.Name = "labVACountry";
             this.labVACountry.Size = new System.Drawing.Size(150, 15);
             this.labVACountry.TabIndex = 0;
@@ -201,144 +350,37 @@
     "h w Unii Europejskiej";
             this.labTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // labVACountryRequester
+            // panel1
             // 
-            this.labVACountryRequester.AutoSize = true;
-            this.labVACountryRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVACountryRequester.Location = new System.Drawing.Point(6, 161);
-            this.labVACountryRequester.MaximumSize = new System.Drawing.Size(150, 0);
-            this.labVACountryRequester.Name = "labVACountryRequester";
-            this.labVACountryRequester.Size = new System.Drawing.Size(150, 30);
-            this.labVACountryRequester.TabIndex = 4;
-            this.labVACountryRequester.Text = "Państwo członkowskie pytającego";
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.txtVAVat);
+            this.panel1.Controls.Add(this.txtVAId);
+            this.panel1.Controls.Add(this.txtVAAdress);
+            this.panel1.Controls.Add(this.txtVAName);
+            this.panel1.Controls.Add(this.txtVAValid);
+            this.panel1.Controls.Add(this.labVAId);
+            this.panel1.Controls.Add(this.labVAAdress);
+            this.panel1.Controls.Add(this.labVAName);
+            this.panel1.Controls.Add(this.labVAValid);
+            this.panel1.Controls.Add(this.btnVAXml);
+            this.panel1.Location = new System.Drawing.Point(282, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(306, 356);
+            this.panel1.TabIndex = 19;
             // 
-            // labVANumberRequester
+            // txtVAVat
             // 
-            this.labVANumberRequester.AutoSize = true;
-            this.labVANumberRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVANumberRequester.Location = new System.Drawing.Point(6, 243);
-            this.labVANumberRequester.Name = "labVANumberRequester";
-            this.labVANumberRequester.Size = new System.Drawing.Size(147, 15);
-            this.labVANumberRequester.TabIndex = 5;
-            this.labVANumberRequester.Text = "Numer Vat pytającego";
-            // 
-            // cbVACountry
-            // 
-            this.cbVACountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVACountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbVACountry.FormattingEnabled = true;
-            this.cbVACountry.Location = new System.Drawing.Point(8, 49);
-            this.cbVACountry.Name = "cbVACountry";
-            this.cbVACountry.Size = new System.Drawing.Size(145, 23);
-            this.cbVACountry.TabIndex = 6;
-            // 
-            // txtVANumber
-            // 
-            this.txtVANumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtVANumber.Location = new System.Drawing.Point(8, 124);
-            this.txtVANumber.Name = "txtVANumber";
-            this.txtVANumber.Size = new System.Drawing.Size(145, 21);
-            this.txtVANumber.TabIndex = 8;
-            // 
-            // cbVACountryRequester
-            // 
-            this.cbVACountryRequester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVACountryRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbVACountryRequester.FormattingEnabled = true;
-            this.cbVACountryRequester.Location = new System.Drawing.Point(9, 200);
-            this.cbVACountryRequester.Name = "cbVACountryRequester";
-            this.cbVACountryRequester.Size = new System.Drawing.Size(145, 23);
-            this.cbVACountryRequester.TabIndex = 9;
-            // 
-            // txtVANumberRequester
-            // 
-            this.txtVANumberRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtVANumberRequester.Location = new System.Drawing.Point(9, 274);
-            this.txtVANumberRequester.Name = "txtVANumberRequester";
-            this.txtVANumberRequester.Size = new System.Drawing.Size(145, 21);
-            this.txtVANumberRequester.TabIndex = 10;
-            // 
-            // labVAValid
-            // 
-            this.labVAValid.AutoSize = true;
-            this.labVAValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVAValid.Location = new System.Drawing.Point(323, 28);
-            this.labVAValid.Name = "labVAValid";
-            this.labVAValid.Size = new System.Drawing.Size(109, 15);
-            this.labVAValid.TabIndex = 11;
-            this.labVAValid.Text = "Poprawność Vat";
-            // 
-            // labVAName
-            // 
-            this.labVAName.AutoSize = true;
-            this.labVAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVAName.Location = new System.Drawing.Point(323, 94);
-            this.labVAName.Name = "labVAName";
-            this.labVAName.Size = new System.Drawing.Size(92, 15);
-            this.labVAName.TabIndex = 12;
-            this.labVAName.Text = "Nazwa spółki";
-            // 
-            // labVAAdress
-            // 
-            this.labVAAdress.AutoSize = true;
-            this.labVAAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVAAdress.Location = new System.Drawing.Point(323, 161);
-            this.labVAAdress.Name = "labVAAdress";
-            this.labVAAdress.Size = new System.Drawing.Size(85, 15);
-            this.labVAAdress.TabIndex = 13;
-            this.labVAAdress.Text = "Adres spółki";
-            // 
-            // labVAId
-            // 
-            this.labVAId.AutoSize = true;
-            this.labVAId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVAId.Location = new System.Drawing.Point(323, 243);
-            this.labVAId.Name = "labVAId";
-            this.labVAId.Size = new System.Drawing.Size(85, 15);
-            this.labVAId.TabIndex = 14;
-            this.labVAId.Text = "Identyfikator";
-            // 
-            // txtVAValid
-            // 
-            this.txtVAValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtVAValid.Location = new System.Drawing.Point(326, 52);
-            this.txtVAValid.Name = "txtVAValid";
-            this.txtVAValid.ReadOnly = true;
-            this.txtVAValid.Size = new System.Drawing.Size(275, 21);
-            this.txtVAValid.TabIndex = 15;
-            // 
-            // txtVAName
-            // 
-            this.txtVAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtVAName.Location = new System.Drawing.Point(326, 124);
-            this.txtVAName.Name = "txtVAName";
-            this.txtVAName.ReadOnly = true;
-            this.txtVAName.Size = new System.Drawing.Size(275, 21);
-            this.txtVAName.TabIndex = 16;
-            // 
-            // txtVAAdress
-            // 
-            this.txtVAAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtVAAdress.Location = new System.Drawing.Point(326, 186);
-            this.txtVAAdress.Multiline = true;
-            this.txtVAAdress.Name = "txtVAAdress";
-            this.txtVAAdress.ReadOnly = true;
-            this.txtVAAdress.Size = new System.Drawing.Size(275, 37);
-            this.txtVAAdress.TabIndex = 17;
-            // 
-            // txtVAId
-            // 
-            this.txtVAId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtVAId.Location = new System.Drawing.Point(326, 274);
-            this.txtVAId.Name = "txtVAId";
-            this.txtVAId.ReadOnly = true;
-            this.txtVAId.Size = new System.Drawing.Size(275, 21);
-            this.txtVAId.TabIndex = 18;
+            this.txtVAVat.Location = new System.Drawing.Point(15, 287);
+            this.txtVAVat.Name = "txtVAVat";
+            this.txtVAVat.Size = new System.Drawing.Size(108, 24);
+            this.txtVAVat.TabIndex = 19;
+            this.txtVAVat.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(858, 450);
             this.Controls.Add(this.labTitle);
             this.Controls.Add(this.groupBox2);
@@ -351,6 +393,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,6 +429,8 @@
         private System.Windows.Forms.TextBox txtVAAdress;
         private System.Windows.Forms.TextBox txtVAName;
         private System.Windows.Forms.TextBox txtVAValid;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtVAVat;
     }
 }
 

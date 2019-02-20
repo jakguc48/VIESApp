@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using VIESApp.enums;
 using EnumsNET;
 using VIESApp.ServiceReference1;
@@ -33,7 +34,9 @@ namespace VIESApp
             var vatNumber = txtVNumber.Text;
             if (!string.IsNullOrEmpty(vatNumber))
             {
+                
                 Task<checkVatResponse> vatTask = CheckVatAsync(countryCode, vatNumber);
+                string la = "adsa";
                 checkVatResponse vat = await vatTask;
 
 
@@ -62,8 +65,10 @@ namespace VIESApp
             var vatNumber = txtVANumber.Text;
             var countryCodeRequester = cbVACountryRequester.SelectedValue.ToString();
             var vatNumberRequester = txtVANumberRequester.Text;
+            
 
             Task<checkVatApproxResponse> vatApproxTask = CheckVatApproxAsync(countryCode, vatNumber, countryCodeRequester, vatNumberRequester);
+            
             checkVatApproxResponse vatApprox = await vatApproxTask;
 
             if (vatApprox.Body.valid)
@@ -72,6 +77,8 @@ namespace VIESApp
                 txtVAName.Text = vatApprox.Body.traderName;
                 txtVAAdress.Text = vatApprox.Body.traderAddress;
                 txtVAId.Text = vatApprox.Body.requestIdentifier;
+                txtVAVat.Text = vatApprox.Body.vatNumber;
+                btnVAXml.Enabled = true;
             }
             else
             {
@@ -133,13 +140,13 @@ namespace VIESApp
             };
 
             checkVatResponse vatResponse = new checkVatResponse();
-
             using (ServiceReference1.checkVatPortTypeClient client = new checkVatPortTypeClient())
             {
                 vatResponse = await client.checkVatAsync(vatRequest.Body.countryCode, vatRequest.Body.vatNumber);
 
                 return vatResponse;
             }
+            
 
         }
 
@@ -169,8 +176,29 @@ namespace VIESApp
             PrepareCountryCombo(cbVCountry);
             PrepareCountryCombo(cbVACountry);
             PrepareCountryCombo(cbVACountryRequester);
+            btnVAXml.Enabled = false;
         }
 
         #endregion Methods
+
+        private void btnVAXml_Click(object sender, EventArgs e)
+        {
+            XDocument doc = new XDocument(new XElement("ViesVatValidation",
+                new XElement("Vat", txtVAVat.Text),
+                    new XElement("Valid", txtVAValid.Text),
+                    new XElement("Name", txtVAName.Text),
+                    new XElement("Adress", txtVAAdress.Text),
+                    new XElement("RequestId", txtVAId.Text)));
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                dialog.Filter = "xml files (*.xml)|*.xml";
+                dialog.FilterIndex = 2;
+                dialog.RestoreDirectory = true;
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    doc.Save(dialog.FileName);
+                }
+            }   
+        }
     }
 }
