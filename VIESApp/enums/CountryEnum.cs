@@ -10,61 +10,61 @@ namespace VIESApp.enums
 {
     public enum CountryEnum
     {
-        [Description("Austria - AT")]
+        [Description("AT -Austria")]
         AT,
-        [Description("Belgia - BE")]
+        [Description("BE - Belgia")]
         BE,
-        [Description("Bułgaria - BG")]
+        [Description("BG -Bułgaria")]
         BG,
-        [Description("Cypr - CY")]
+        [Description("CY - Cypr")]
         CY,
-        [Description("Czechy - CZ")]
+        [Description("CZ - Czechy")]
         CZ,
-        [Description("Niemcy - DE")]
+        [Description("DE - Niemcy")]
         DE,
-        [Description("Dania - DK")]
+        [Description("DK - Dania")]
         DK,
-        [Description("Estonia - EE")]
+        [Description("EE - Estonia")]
         EE,
-        [Description("Grecja - EL")]
+        [Description("EL - Grecja")]
         EL,
-        [Description("Hiszpania - ES")]
+        [Description("ES - Hiszpania")]
         ES,
-        [Description("Finlandia - FI")]
+        [Description("FI - Finlandia")]
         FI,
-        [Description("Francja - FR")]
+        [Description("FR - Francja")]
         FR,
-        [Description("Wielka Brytania - GB")]
+        [Description("GB - Wielka Brytania")]
         GB,
-        [Description("Chorwacja - HR")]
+        [Description("HR - Chorwacja")]
         HR,
-        [Description("Węgry - HU")]
+        [Description("HU - Węgry")]
         HU,
-        [Description("Irlandia - IE")]
+        [Description("IE - Irlandia")]
         IE,
-        [Description("Włochy - IT")]
+        [Description("IT - Włochy")]
         IT,
-        [Description("Litwa - LT")]
+        [Description("LT - Litwa")]
         LT,
-        [Description("Luksemburg - LU")]
+        [Description("LU - Luksemburg")]
         LU,
-        [Description("Łotwa - LV")]
+        [Description("LV - Łotwa")]
         LV,
-        [Description("Malta - MT")]
+        [Description("MT - Malta")]
         MT,
-        [Description("Holandia - NL")]
+        [Description("NL - Holandia")]
         NL,
-        [Description("Polska - PL")]
+        [Description("PL - Polska")]
         PL,
-        [Description("Portugalia - PT")]
+        [Description("PT - Portugalia")]
         PT,
-        [Description("Rumunia - RO")]
+        [Description("RO - Rumunia")]
         RO,
-        [Description("Szwecja - SE")]
+        [Description("SE - Szwecja")]
         SE,
-        [Description("Słowenia - SI")]
+        [Description("SI - Słowenia")]
         SI,
-        [Description("Słowacja - SK")]
+        [Description("SK - Słowacja")]
         SK,
 
 

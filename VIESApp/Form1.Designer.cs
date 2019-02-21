@@ -75,7 +75,7 @@
             this.groupBox1.Controls.Add(this.labVNumber);
             this.groupBox1.Controls.Add(this.labVCountry);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 64);
+            this.groupBox1.Location = new System.Drawing.Point(15, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(186, 234);
             this.groupBox1.TabIndex = 0;
@@ -220,6 +220,7 @@
             this.txtVAValid.ReadOnly = true;
             this.txtVAValid.Size = new System.Drawing.Size(275, 23);
             this.txtVAValid.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.txtVAValid, "Wartość True oznacza aktywny numer Vat");
             // 
             // labVAId
             // 
@@ -404,6 +405,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(858, 474);
             this.Controls.Add(this.labTitle);
