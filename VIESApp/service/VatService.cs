@@ -11,13 +11,15 @@ namespace VIESApp.service
 {
     class VatService :IVatService
     {
-        public void CreateXML(string vat, string valid, string name, string adress, string requestId)
+        public void CreateXML(string vat, string valid, string name, string adress, string requestId, string date, string country)
         {
             XDocument doc = new XDocument(new XElement("ViesVatValidation",
                 new XElement("Vat", vat),
+                new XElement("Country", country),
                 new XElement("Valid", valid),
                 new XElement("Name", name),
                 new XElement("Adress", adress),
+                new XElement("RequestDate", date),
                 new XElement("RequestId", requestId)));
             using (SaveFileDialog dialog = new SaveFileDialog())
             {

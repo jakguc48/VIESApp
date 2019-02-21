@@ -9,7 +9,7 @@ namespace VIESApp.service
 {
     public interface IVatService
     {
-        void CreateXML(string vat, string valid, string name, string adress, string requestId);
+        void CreateXML(string vat, string valid, string name, string adress, string requestId, string date, string country);
         Task<checkVatApproxResponse> CheckVatApproxAsync(string country, string vat, string countryReq, string vatReq);
         Task<checkVatResponse> CheckVatAsync(string country, string vat);
     }
