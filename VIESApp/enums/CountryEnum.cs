@@ -14,7 +14,7 @@ namespace VIESApp.enums
         AT,
         [Description("BE - Belgia")]
         BE,
-        [Description("BG -Bułgaria")]
+        [Description("BG - Bułgaria")]
         BG,
         [Description("CY - Cypr")]
         CY,

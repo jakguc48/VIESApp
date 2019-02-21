@@ -61,9 +61,11 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtVADate = new System.Windows.Forms.TextBox();
             this.txtVACountry = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -86,7 +88,7 @@
             // txtVNumber
             // 
             this.txtVNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtVNumber.Location = new System.Drawing.Point(10, 124);
+            this.txtVNumber.Location = new System.Drawing.Point(11, 126);
             this.txtVNumber.Name = "txtVNumber";
             this.txtVNumber.Size = new System.Drawing.Size(145, 23);
             this.txtVNumber.TabIndex = 7;
@@ -119,7 +121,7 @@
             // 
             this.labVNumber.AutoSize = true;
             this.labVNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVNumber.Location = new System.Drawing.Point(10, 94);
+            this.labVNumber.Location = new System.Drawing.Point(8, 108);
             this.labVNumber.Name = "labVNumber";
             this.labVNumber.Size = new System.Drawing.Size(74, 15);
             this.labVNumber.TabIndex = 4;
@@ -226,7 +228,7 @@
             // 
             this.labVAId.AutoSize = true;
             this.labVAId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVAId.Location = new System.Drawing.Point(16, 253);
+            this.labVAId.Location = new System.Drawing.Point(16, 266);
             this.labVAId.Name = "labVAId";
             this.labVAId.Size = new System.Drawing.Size(150, 15);
             this.labVAId.TabIndex = 14;
@@ -236,7 +238,7 @@
             // 
             this.labVAAdress.AutoSize = true;
             this.labVAAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVAAdress.Location = new System.Drawing.Point(16, 171);
+            this.labVAAdress.Location = new System.Drawing.Point(16, 178);
             this.labVAAdress.Name = "labVAAdress";
             this.labVAAdress.Size = new System.Drawing.Size(85, 15);
             this.labVAAdress.TabIndex = 13;
@@ -246,7 +248,7 @@
             // 
             this.labVAName.AutoSize = true;
             this.labVAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVAName.Location = new System.Drawing.Point(16, 104);
+            this.labVAName.Location = new System.Drawing.Point(16, 116);
             this.labVAName.Name = "labVAName";
             this.labVAName.Size = new System.Drawing.Size(92, 15);
             this.labVAName.TabIndex = 12;
@@ -256,7 +258,7 @@
             // 
             this.labVAValid.AutoSize = true;
             this.labVAValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVAValid.Location = new System.Drawing.Point(16, 38);
+            this.labVAValid.Location = new System.Drawing.Point(16, 43);
             this.labVAValid.Name = "labVAValid";
             this.labVAValid.Size = new System.Drawing.Size(109, 15);
             this.labVAValid.TabIndex = 11;
@@ -317,7 +319,7 @@
             // 
             this.labVANumberRequester.AutoSize = true;
             this.labVANumberRequester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVANumberRequester.Location = new System.Drawing.Point(22, 245);
+            this.labVANumberRequester.Location = new System.Drawing.Point(22, 258);
             this.labVANumberRequester.Name = "labVANumberRequester";
             this.labVANumberRequester.Size = new System.Drawing.Size(147, 15);
             this.labVANumberRequester.TabIndex = 5;
@@ -353,7 +355,7 @@
             // 
             this.labVANumber.AutoSize = true;
             this.labVANumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labVANumber.Location = new System.Drawing.Point(22, 96);
+            this.labVANumber.Location = new System.Drawing.Point(22, 108);
             this.labVANumber.Name = "labVANumber";
             this.labVANumber.Size = new System.Drawing.Size(74, 15);
             this.labVANumber.TabIndex = 1;
@@ -401,6 +403,16 @@
             this.txtVACountry.TabIndex = 21;
             this.txtVACountry.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::VIESApp.Properties.Resources._128px_Flag_of_Europe_svg;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(42, 340);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 83);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,6 +420,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(858, 474);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labTitle);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -421,6 +434,7 @@
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,6 +473,7 @@
         private System.Windows.Forms.TextBox txtVAVat;
         private System.Windows.Forms.TextBox txtVADate;
         private System.Windows.Forms.TextBox txtVACountry;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

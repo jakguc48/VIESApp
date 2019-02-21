@@ -18,7 +18,7 @@ namespace VIESApp.service
                 new XElement("Country", country),
                 new XElement("Valid", valid),
                 new XElement("Name", name),
-                new XElement("Adress", adress),
+                new XElement("Address", adress),
                 new XElement("RequestDate", date),
                 new XElement("RequestId", requestId)));
             using (SaveFileDialog dialog = new SaveFileDialog())
@@ -55,7 +55,7 @@ namespace VIESApp.service
             using (ServiceReference1.checkVatPortTypeClient client = new checkVatPortTypeClient())
             {
                 approxResponse = await client.checkVatApproxAsync(approxRequest.Body.countryCode,
-                    approxRequest.Body.requesterVatNumber, approxRequest.Body.traderName, approxRequest.Body.traderCompanyType, approxRequest.Body.traderStreet,
+                    approxRequest.Body.vatNumber, approxRequest.Body.traderName, approxRequest.Body.traderCompanyType, approxRequest.Body.traderStreet,
                     approxRequest.Body.traderPostcode, approxRequest.Body.traderCity, approxRequest.Body.requesterCountryCode, approxRequest.Body.requesterVatNumber);
 
                 return approxResponse;
